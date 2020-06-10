@@ -1,0 +1,47 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Hapi/joi backend server",
+  "main": "./server/server.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha --require @babel/register",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
+    "clean": "rimraf dist-server",
+    "start": "npm run build && node ./dist/server/server.js"
+  },
+  "author": "Mitchell Gent",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/hapi": "^19.1.1",
+    "@hapi/joi": "^17.1.1",
+    "firebase": "^7.14.6",
+    "firebase-admin": "^8.12.1",
+    "firebase-tools": "^8.4.1",
+    "google-auth-library": "^6.0.1",
+    "hapi-auth-jwt2": "^10.1.0",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/register": "^7.10.1",
+    "@hapi/code": "^8.0.1",
+    "hpal": "^2.5.0",
+    "jest": "^26.0.1",
+    "mocha": "^7.2.0",
+    "rimraf": "^3.0.2"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "esmodules": true
+          }
+        }
+      ]
+    ]
+  }
+}
