@@ -1,8 +1,8 @@
 import Joi from '@hapi/joi'
 
-let loginSignup = {
+let getDummyProject = {
   method: 'POST',
-  path: '/api/auth/loginSignup',
+  path: '/api/project/getDummyProject',
   options: {
     validate: {
       payload: Joi.object({
@@ -15,3 +15,5 @@ let loginSignup = {
         return data
   }
 }
+
+export default getDummyProject
