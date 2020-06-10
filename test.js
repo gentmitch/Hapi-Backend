@@ -2,16 +2,16 @@ import { expect } from  '@hapi/code'
  
 import server from './server/server.js'
 
- describe('POST /api/auth/loginSignup', () => {
+ describe('POST url: /api/project/getDummyProject', () => {
     context('Valid credentials', () => {
       let res
       
       beforeEach(async () => {
         res = await server.inject({
           method: 'post',
-          url: '/api/auth/loginSignup',
+          url: '/api/project/getDummyProject',
           payload: {
-              id_token: 'some-token'
+              data: 'data'
           }
         })
       })
@@ -31,7 +31,7 @@ import server from './server/server.js'
       beforeEach(async () => {
         res = await server.inject({
           method: 'post',
-          url: '/api/auth/loginSignup',
+          url: '/api/project/getDummyProject',
           payload: {} // note missing id_token
         })
       })
